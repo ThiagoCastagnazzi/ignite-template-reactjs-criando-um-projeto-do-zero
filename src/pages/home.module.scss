@@ -1,0 +1,21 @@
+.headerSpacing {
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.main {
+  margin-bottom: 5rem;
+}
+
+.loadPosts {
+  margin-top: 4rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--highlight);
+  border: 0;
+  background: transparent;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
