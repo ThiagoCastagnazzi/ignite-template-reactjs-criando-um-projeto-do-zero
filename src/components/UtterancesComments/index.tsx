@@ -14,10 +14,6 @@ export function UtterancesComments(props: UtterancesCommentsProps) {
     scriptElem.src = 'https://utteranc.es/client.js';
     scriptElem.async = true;
     scriptElem.crossOrigin = 'anonymous';
-    scriptElem.setAttribute(
-      'repo',
-      'mpirescarvalho/ignite-reactjs-criando-um-projeto-do-zero'
-    );
     scriptElem.setAttribute('issue-term', 'pathname');
     scriptElem.setAttribute('theme', 'github-dark');
     anchor.appendChild(scriptElem);

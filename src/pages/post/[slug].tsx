@@ -208,12 +208,12 @@ export const getStaticProps: GetStaticProps<PostProps> = async ({
 }) => {
   const slug = params.slug as string;
   const prismic = getPrismicClient();
-  const response = await prismic.getByUID('posts', slug, {
+  const response = await prismic.getByUID('post', slug, {
     ref: previewData?.ref ?? null,
   });
 
   const previousPostResponse = await prismic.query(
-    Prismic.Predicates.at('document.type', 'posts'),
+    Prismic.Predicates.at('document.type', 'post'),
     {
       after: response.id,
       fetch: 'posts.title',
@@ -224,7 +224,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async ({
   );
 
   const nextPostResponse = await prismic.query(
-    Prismic.Predicates.at('document.type', 'posts'),
+    Prismic.Predicates.at('document.type', 'post'),
     {
       after: response.id,
       fetch: 'posts.title',

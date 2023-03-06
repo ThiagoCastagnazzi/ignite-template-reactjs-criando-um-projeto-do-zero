@@ -35,6 +35,10 @@ export default function Home(props: HomeProps) {
   const [posts, setPosts] = useState<Post[]>(props.postsPagination.results);
   const [nextPage, setNextPage] = useState(props.postsPagination.next_page);
 
+  console.log(posts);
+  console.log(nextPage);
+  console.log(process.env.PRISMIC_ACCESS_TOKEN);
+
   async function handleLoadPosts() {
     const response = await fetch(nextPage);
     const prismicResponse = await response.json();
@@ -77,9 +81,9 @@ export const getStaticProps: GetStaticProps<HomeProps> = async ({
 }) => {
   const prismic = getPrismicClient();
   const response = await prismic.query(
-    Prismic.Predicates.at('document.type', 'posts'),
+    Prismic.Predicates.at('document.type', 'post'),
     {
-      fetch: ['posts.title', 'posts.subtitle', 'posts.author'],
+      fetch: ['post.title', 'post.subtitle', 'post.author'],
       pageSize: 2,
       ref: previewData?.ref ?? null,
     }

@@ -1,0 +1,5 @@
+{
+  "apiEndpoint": "npm i @prismicio/types",
+  "libraries": ["@/slices"],
+  "_latest": "0.6.0"
+}
